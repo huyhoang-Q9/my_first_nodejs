@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>User List</title>
+    <link rel="stylesheet" href="../css/bootstrap.css"/>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Danh Sách Tài Khoản Khởi Tạo</h2>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Họ Tên</th>
+                <th scope="col">Email</th>
+                <th scope="col">Trạng Thái</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each itemUser}}
+                <tr>
+                  <th scope="row">{{id}}</th>
+                  <td>{{ name }}</td>
+                  <td>{{ email }}</td>
+                  <td>
+                    <a href="/users/edit/{{this.id}}" class="btn btn-sm btn-info edit">Sửa</a>
+                    <a href="/delete/{{this.id}}" class="btn btn-sm btn-danger delete">Xóa</a>
+                  </td>
+                </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+ 
+    <script src="js/bootstrap.js"></script>
+  </body>
+</html>
